@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Hakta_app" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Hakta_app" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,33 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/gotham_pro</item>
+    </style>
+
+    <style name="SignInField" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:backgroundTint">@color/hint_grey</item>
+    </style>
+
+    <style name="SignInBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/hint_grey</item>
+        <item name="boxStrokeColor">@color/light_green</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="SignInButton" parent="@style/Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/sign_btn_bg</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 </resources>

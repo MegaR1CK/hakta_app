@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">hakta_app</string>
+
+    <string name="mail_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_title">Sign in</string>
+    <string name="sign_in_fb">Sign in with Facebook</string>
+    <string name="sign_up_title">Sign up</string>
+    <string name="sing_in_success">You are successfully logged in!</string>
+
+    <string name="nickname_hint">Nickname</string>
+    <string name="code_hint">Code</string>
+    <string name="phone_hint">Phone</string>
+    <string name="repeat_password_hint">Repeat password</string>
+
+    <string name="error_title">Error!</string>
+    <string name="error_empty_field">Field cannot be empty!</string>
+    <string name="error_incorrect_email">Incorrect email!</string>
+    <string name="error_password_confirm">Passwords doesn\'t match!</string>
+    <string name="error_incorrect_phone">Incorrect phone number!</string>
+    <string name="ok">OK</string>
+
+    <string name="activation_message">Activation code was sent to number:</string>
 </resources>
