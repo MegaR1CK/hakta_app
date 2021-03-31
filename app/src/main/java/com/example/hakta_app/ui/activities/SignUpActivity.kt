@@ -32,14 +32,14 @@ class SignUpActivity : AppCompatActivity() {
                             t.message?.let { it1 -> App.errorAlert(this@SignUpActivity, it1) }
                         }
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                            sendCode(code, phone)
+                            sendCode(code, phone, email)
                         }
                     })
             }
         }
     }
 
-    private fun sendCode(code: String, phone: String) {
+    private fun sendCode(code: String, phone: String, mail: String) {
         App.MAIN_API.sendCode(PhoneModel(code, phone)).enqueue(object : Callback<Unit> {
             override fun onFailure(call: Call<Unit>, t: Throwable) {
                 t.message?.let { it1 -> App.errorAlert(this@SignUpActivity, it1) }
@@ -47,7 +47,9 @@ class SignUpActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                 startActivity(Intent(this@SignUpActivity, ActivationActivity::class.java)
-                    .putExtra(ActivationActivity.PHONE_KEY, "+${code + phone}"))
+                    .putExtra(ActivationActivity.PHONE_KEY, phone)
+                    .putExtra(ActivationActivity.CODE_KEY, code)
+                    .putExtra(SignInActivity.MAIL_KEY, mail))
             }
         })
     }
@@ -61,6 +63,7 @@ class SignUpActivity : AppCompatActivity() {
         phone: String
     ): Boolean {
         val mailRegex = Regex("[A-Za-z0-9_-]+@[a-z]+\\.[a-z]{2,4}")
+        hideErrors()
         when {
             email.isBlank() ->
                 box_mail_sign_up.error = getString(R.string.error_empty_field)

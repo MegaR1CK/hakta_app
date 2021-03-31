@@ -20,5 +20,7 @@
     <string name="error_incorrect_phone">Incorrect phone number!</string>
     <string name="ok">OK</string>
 
-    <string name="activation_message">Activation code was sent to number:</string>
+    <string name="activation_message">Activation code was sent to number:\n%1$s</string>
+    <string name="activation_timer">%1$d sec</string>
+    <string name="resend_code">Send code again</string>
 </resources>

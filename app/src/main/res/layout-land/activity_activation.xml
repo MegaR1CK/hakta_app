@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="450dp"
-        android:layout_height="300dp"
+        android:layout_height="370dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:background="@drawable/sign_container_bg"
@@ -21,6 +21,7 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/activation_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/activation_message"
@@ -28,7 +29,46 @@
             android:textSize="20sp"
             android:gravity="center" />
 
+        <com.chaos.view.PinView
+            android:id="@+id/field_act_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:itemCount="4"
+            app:itemHeight="40dp"
+            app:itemWidth="40dp"
+            app:itemSpacing="10dp"
+            app:lineColor="@color/hint_grey"
+            app:lineWidth="2dp"
+            app:viewType="line"
+            android:inputType="number"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/hint_grey"
+            android:textSize="20sp"
+            style="@style/PinWidget.PinView" />
 
+        <TextView
+            android:id="@+id/text_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activation_timer"
+            android:textColor="@color/hint_grey"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/btn_resend_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/resend_code"
+            android:textColor="@color/hint_grey"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:enabled="false"/>
 
     </LinearLayout>
 </FrameLayout>

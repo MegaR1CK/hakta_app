@@ -1,12 +1,10 @@
 package com.example.hakta_app
 
-import com.example.hakta_app.models.LoginDataModel
-import com.example.hakta_app.models.PhoneModel
-import com.example.hakta_app.models.RegisterDataModel
-import com.example.hakta_app.models.TokenModel
+import com.example.hakta_app.models.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface Api {
     @POST("user/login")
@@ -17,4 +15,7 @@ interface Api {
 
     @POST("user/smsCode")
     fun sendCode(@Body phone: PhoneModel): Call<Unit>
+
+    @PUT("user/activation")
+    fun activate(@Body code: CodeModel): Call<Unit>
 }
