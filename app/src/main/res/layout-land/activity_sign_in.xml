@@ -10,7 +10,7 @@
         android:layout_height="480dp"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:background="@drawable/sign_container_bg"
+        android:background="@drawable/sign_in_container_bg"
         android:paddingTop="20dp"
         android:paddingStart="70dp"
         android:paddingEnd="70dp">

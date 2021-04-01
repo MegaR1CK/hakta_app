@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:elevation="0dp">
+
+    <ImageView
+        android:id="@+id/current_quest_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="end" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_horizontal"
+        android:paddingTop="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/current_quest_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/light_green" />
+
+        <TextView
+            android:id="@+id/current_quest_desc"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:lineSpacingExtra="7dp"
+            android:text="Description\nd\nd\nd\nd\n" />
+
+        <include
+            layout="@layout/btn_details" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

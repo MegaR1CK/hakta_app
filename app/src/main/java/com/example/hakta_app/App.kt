@@ -15,6 +15,8 @@ class App : Application() {
 
         val MAIN_API: Api = retrofit.create(Api::class.java)
 
+        var TOKEN: String? = null
+
         fun errorAlert(context: Context, message: String) {
             val res = context.resources
             AlertDialog.Builder(context)

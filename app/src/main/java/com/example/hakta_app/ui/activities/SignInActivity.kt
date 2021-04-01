@@ -34,10 +34,15 @@ class SignInActivity : AppCompatActivity() {
             if (validate(email, password)) {
                 App.MAIN_API.login(LoginDataModel(email, password)).enqueue(object : Callback<TokenModel> {
                     override fun onResponse(call: Call<TokenModel>, response: Response<TokenModel>) {
-                        Toast.makeText(this@SignInActivity,
-                            R.string.sing_in_success,
-                            Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+                        if (response.code() == 200) {
+                            App.TOKEN = response.body()?.token
+                            Toast.makeText(this@SignInActivity,
+                                R.string.sing_in_success,
+                                Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@SignInActivity,
+                                HomeActivity::class.java))
+                        }
+                        else App.errorAlert(this@SignInActivity, response.message())
                     }
                     override fun onFailure(call: Call<TokenModel>, t: Throwable) {
                         t.message?.let { it1 -> App.errorAlert(this@SignInActivity, it1) }

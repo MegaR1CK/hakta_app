@@ -23,4 +23,13 @@
     <string name="activation_message">Activation code was sent to number:\n%1$s</string>
     <string name="activation_timer">%1$d sec</string>
     <string name="resend_code">Send code again</string>
+
+    <string name="current_task_title">Current task</string>
+    <string name="profile_title">Profile</string>
+    <string name="best_quests_title">Best quests</string>
+
+    <string name="details_btn_text">Details</string>
+    <string name="no_tasks_title">There is no tasks yet</string>
+    <string name="random_quest">Random quest</string>
+    <string name="kazan">Kazan</string>
 </resources>

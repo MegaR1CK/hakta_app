@@ -2,9 +2,7 @@ package com.example.hakta_app
 
 import com.example.hakta_app.models.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface Api {
     @POST("user/login")
@@ -18,4 +16,10 @@ interface Api {
 
     @PUT("user/activation")
     fun activate(@Body code: CodeModel): Call<Unit>
+
+     @GET("quests/popular")
+     fun getBestQuests(@Header("Token") token: String): Call<BestQuestsResponse>
+
+    @GET("user/currentTask")
+    fun getCurrentTask(@Header("Token") token: String): Call<CurrentTaskResponse>
 }
