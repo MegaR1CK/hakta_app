@@ -40,7 +40,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/field_password_sign_in"
                 android:inputType="textPassword"
-                style="@style/SignInField"/>
+                style="@style/SignInField" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

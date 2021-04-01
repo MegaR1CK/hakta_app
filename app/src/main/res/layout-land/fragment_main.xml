@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/main_bg"
+        android:scaleType="centerCrop" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:paddingStart="70dp"
+            android:paddingEnd="70dp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/MainTitle"
+                android:layout_width="500dp"
+                android:text="@string/current_task_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/MainTitle"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="@string/profile_title"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                layout="@layout/card_no_tasks"
+                android:id="@+id/card_no_tasks"
+                android:layout_width="500dp"
+                android:layout_height="320dp"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="500dp"
+                android:layout_height="300dp"
+                android:backgroundTint="@color/grey"
+                android:elevation="0dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_no_tasks">
+
+                <com.yandex.mapkit.mapview.MapView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/map_view" />
+
+            </androidx.cardview.widget.CardView>
+
+            <include
+                android:id="@+id/card_current_quest"
+                layout="@layout/card_current_quest"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView1" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="290dp"
+                android:layout_height="149dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/grey"
+                app:cardCornerRadius="10dp"
+                android:elevation="0dp"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <include
+                layout="@layout/card_kazan"
+                android:layout_width="284dp"
+                android:layout_height="146dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="600dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/grey"
+                app:cardCornerRadius="10dp"
+                android:elevation="0dp"
+                app:layout_constraintStart_toStartOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/MainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/best_quests_title"
+                app:layout_constraintStart_toStartOf="@+id/cardView4"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_tasks"
+                android:layout_width="500dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/grey"
+                app:cardCornerRadius="10dp"
+                android:elevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_current_quest" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_best_quests"
+                android:layout_width="600dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:paddingBottom="20dp"
+                app:layout_constraintStart_toStartOf="@+id/cardView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
