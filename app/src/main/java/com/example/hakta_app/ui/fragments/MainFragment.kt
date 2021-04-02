@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.hakta_app.App
 import com.example.hakta_app.R
+import com.example.hakta_app.errorAlert
 import com.example.hakta_app.models.BestQuestsResponse
 import com.example.hakta_app.models.CurrentTaskResponse
 import com.example.hakta_app.ui.adapters.BestQuestsAdapter
@@ -69,7 +70,7 @@ class MainFragment : Fragment() {
                 ?: "")
             .enqueue(object : Callback<BestQuestsResponse> {
                 override fun onFailure(call: Call<BestQuestsResponse>, t: Throwable) {
-                    t.message?.let { activity?.let { it1 -> App.errorAlert(it1, it) } }
+                    t.message?.let { activity?.errorAlert(it) }
                 }
 
                 override fun onResponse(call: Call<BestQuestsResponse>,
@@ -85,7 +86,7 @@ class MainFragment : Fragment() {
                 ?: "")
             .enqueue(object : Callback<CurrentTaskResponse> {
                 override fun onFailure(call: Call<CurrentTaskResponse>, t: Throwable) {
-                    t.message?.let { activity?.let { it1 -> App.errorAlert(it1, it) } }
+                    t.message?.let { activity?.errorAlert(it) }
                 }
 
                 override fun onResponse(call: Call<CurrentTaskResponse>,

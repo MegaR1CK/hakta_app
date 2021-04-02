@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hakta_app.App
 import com.example.hakta_app.R
+import com.example.hakta_app.errorAlert
 import com.example.hakta_app.models.PhoneModel
 import com.example.hakta_app.models.RegisterDataModel
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -29,7 +30,7 @@ class SignUpActivity : AppCompatActivity() {
                 App.MAIN_API.register(RegisterDataModel(email, name, password, phone))
                     .enqueue(object : Callback<Unit> {
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            t.message?.let { it1 -> App.errorAlert(this@SignUpActivity, it1) }
+                            t.message?.let { it1 -> this@SignUpActivity.errorAlert(it1) }
                         }
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                             sendCode(code, phone, email)
@@ -42,7 +43,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun sendCode(code: String, phone: String, mail: String) {
         App.MAIN_API.sendCode(PhoneModel(code, phone)).enqueue(object : Callback<Unit> {
             override fun onFailure(call: Call<Unit>, t: Throwable) {
-                t.message?.let { it1 -> App.errorAlert(this@SignUpActivity, it1) }
+                t.message?.let { it1 -> this@SignUpActivity.errorAlert(it1) }
             }
 
             override fun onResponse(call: Call<Unit>, response: Response<Unit>) {

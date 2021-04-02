@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.hakta_app.App
 import com.example.hakta_app.PrefManager
 import com.example.hakta_app.R
+import com.example.hakta_app.errorAlert
 import com.example.hakta_app.models.LoginDataModel
 import com.example.hakta_app.models.TokenModel
 import kotlinx.android.synthetic.main.activity_sign_in.*
@@ -44,10 +45,10 @@ class SignInActivity : AppCompatActivity() {
                             startActivity(Intent(this@SignInActivity,
                                 HomeActivity::class.java))
                         }
-                        else App.errorAlert(this@SignInActivity, response.message())
+                        else this@SignInActivity.errorAlert(response.message())
                     }
                     override fun onFailure(call: Call<TokenModel>, t: Throwable) {
-                        t.message?.let { it1 -> App.errorAlert(this@SignInActivity, it1) }
+                        t.message?.let { it1 -> this@SignInActivity.errorAlert(it1) }
                     }
                 })
             }

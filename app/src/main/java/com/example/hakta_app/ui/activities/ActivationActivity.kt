@@ -11,6 +11,7 @@ import android.view.View
 import androidx.core.widget.doAfterTextChanged
 import com.example.hakta_app.App
 import com.example.hakta_app.R
+import com.example.hakta_app.errorAlert
 import com.example.hakta_app.models.CodeModel
 import com.example.hakta_app.models.PhoneModel
 import kotlinx.android.synthetic.main.activity_activation.*
@@ -45,7 +46,7 @@ class ActivationActivity : AppCompatActivity() {
                 if (phoneCodes.containsKey(fullPhone) && phoneCodes[fullPhone] == it.toString()) {
                     App.MAIN_API.activate(CodeModel(it.toString())).enqueue(object : Callback<Unit> {
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            t.message?.let { it1 -> App.errorAlert(this@ActivationActivity, it1) }
+                            t.message?.let { it1 -> this@ActivationActivity.errorAlert(it1) }
                         }
 
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
@@ -78,7 +79,7 @@ class ActivationActivity : AppCompatActivity() {
         btn_resend_code.setOnClickListener {
             App.MAIN_API.sendCode(PhoneModel(code, phone)).enqueue(object : Callback<Unit> {
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    t.message?.let { it1 -> App.errorAlert(this@ActivationActivity, it1) }
+                    t.message?.let { it1 -> this@ActivationActivity.errorAlert(it1) }
                 }
 
                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
