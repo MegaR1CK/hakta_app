@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.hakta_app.App
-import com.example.hakta_app.HomeActivity
+import com.example.hakta_app.PrefManager
 import com.example.hakta_app.R
 import com.example.hakta_app.models.LoginDataModel
 import com.example.hakta_app.models.TokenModel
@@ -36,6 +36,8 @@ class SignInActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<TokenModel>, response: Response<TokenModel>) {
                         if (response.code() == 200) {
                             App.TOKEN = response.body()?.token
+                            val prefManager = PrefManager(this@SignInActivity)
+                            App.TOKEN?.let { it1 -> prefManager.setToken(it1) }
                             Toast.makeText(this@SignInActivity,
                                 R.string.sing_in_success,
                                 Toast.LENGTH_SHORT).show()

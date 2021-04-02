@@ -1,9 +1,10 @@
-package com.example.hakta_app
+package com.example.hakta_app.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hakta_app.R
 import com.example.hakta_app.models.Quest
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_best_quest.view.*

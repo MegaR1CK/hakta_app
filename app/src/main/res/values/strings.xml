@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">hakta_app</string>
 
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="start_btn">Start</string>
+    <string name="slide1_title">Select the quest!</string>
+    <string name="slide1_desc">A huge collection of different quests.
+        Historical, children\'s, outdoors and many others…</string>
+    <string name="slide2_title">Complete the task!</string>
+    <string name="slide2_desc">Search for secret keys, location detection,
+        step counting and much more…</string>
+    <string name="slide3_title">Become a Top Key Finder</string>
+    <string name="slide3_desc">User ratings, quest ratings, quest author ratings…</string>
+
     <string name="mail_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="sign_in_title">Sign in</string>
@@ -32,6 +44,4 @@
     <string name="no_tasks_title">There is no tasks yet</string>
     <string name="random_quest">Random quest</string>
     <string name="kazan">Kazan</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.hakta_app
+package com.example.hakta_app.ui.fragments
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,8 +14,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.hakta_app.App
+import com.example.hakta_app.R
 import com.example.hakta_app.models.BestQuestsResponse
 import com.example.hakta_app.models.CurrentTaskResponse
+import com.example.hakta_app.ui.adapters.BestQuestsAdapter
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.squareup.picasso.Picasso
@@ -58,11 +61,12 @@ class MainFragment : Fragment() {
                 requestPermissions(arrayOf(
                     android.Manifest.permission.ACCESS_FINE_LOCATION,
                     android.Manifest.permission.ACCESS_COARSE_LOCATION),
-                    PERMISSION_CODE)
+                        PERMISSION_CODE)
             }
         }
 
-        App.MAIN_API.getBestQuests(App.TOKEN ?: "")
+        App.MAIN_API.getBestQuests(App.TOKEN
+                ?: "")
             .enqueue(object : Callback<BestQuestsResponse> {
                 override fun onFailure(call: Call<BestQuestsResponse>, t: Throwable) {
                     t.message?.let { activity?.let { it1 -> App.errorAlert(it1, it) } }
@@ -77,7 +81,8 @@ class MainFragment : Fragment() {
                 }
             })
 
-        App.MAIN_API.getCurrentTask(App.TOKEN ?: "")
+        App.MAIN_API.getCurrentTask(App.TOKEN
+                ?: "")
             .enqueue(object : Callback<CurrentTaskResponse> {
                 override fun onFailure(call: Call<CurrentTaskResponse>, t: Throwable) {
                     t.message?.let { activity?.let { it1 -> App.errorAlert(it1, it) } }
