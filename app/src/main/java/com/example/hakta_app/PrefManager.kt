@@ -30,4 +30,8 @@ class PrefManager(val context: Context){
     fun setToken(token: String) {
         editor.putString(TOKEN, token).apply()
     }
+
+    fun deleteToken() {
+        editor.remove(TOKEN).apply()
+    }
 }

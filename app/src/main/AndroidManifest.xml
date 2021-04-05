@@ -17,8 +17,8 @@
         android:theme="@style/Theme.Hakta_app"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.activities.OnBoardActivity"></activity>
-        <activity android:name=".ui.activities.OnboardActivity" />
-        <activity android:name=".ui.activities.HomeActivity" />
+        <activity android:name=".ui.activities.HomeActivity"
+            android:theme="@style/Theme.Hakta_app.Material"/>
         <activity android:name=".ui.activities.ActivationActivity" />
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.SignInActivity" />

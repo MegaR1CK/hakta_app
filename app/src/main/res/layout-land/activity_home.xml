@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.google.android.material.navigationrail.NavigationRailView
+        android:id="@+id/side_rail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:itemIconTint="@color/light_green"
+        app:backgroundTint="@color/grey"
+        app:itemTextColor="@color/light_green"
+        app:itemIconSize="30sp"
+        app:labelVisibilityMode="labeled"
+        app:itemRippleColor="@color/hint_grey"
+        app:menu="@menu/menu_side"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_container" />
 
-</FrameLayout>
+</LinearLayout>

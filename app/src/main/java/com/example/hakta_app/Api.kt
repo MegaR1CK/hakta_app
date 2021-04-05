@@ -22,4 +22,7 @@ interface Api {
 
     @GET("user/currentTask")
     fun getCurrentTask(@Header("Token") token: String): Call<CurrentTaskResponse>
+
+    @PUT("user/logout")
+    fun logout(@Header("Token") token: String): Call<Unit>
 }

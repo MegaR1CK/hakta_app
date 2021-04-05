@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/icon_logo" />
+    <item
+        android:id="@+id/menu_quests"
+        android:title="@string/menu_quests"
+        android:icon="@drawable/icon_key" />
+    <item
+        android:id="@+id/menu_chat"
+        android:title="@string/menu_chat"
+        android:icon="@drawable/icon_chat" />
+    <item
+        android:id="@+id/menu_favourites"
+        android:title="@string/menu_favorites"
+        android:icon="@drawable/icon_featured" />
+    <item
+        android:id="@+id/menu_ratings"
+        android:title="@string/menu_ratings"
+        android:icon="@drawable/icon_cup" />
+    <item
+        android:id="@+id/menu_compass"
+        android:title="@string/menu_compass"
+        android:icon="@drawable/icon_compass" />
+    <item
+        android:id="@+id/menu_logout"
+        android:title="@string/menu_logout"
+        android:icon="@drawable/icon_door" />
+
+</menu>

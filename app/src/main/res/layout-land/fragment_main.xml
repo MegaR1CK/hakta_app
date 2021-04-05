@@ -21,13 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="20dp"
-            android:paddingStart="70dp"
-            android:paddingEnd="70dp">
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp">
 
             <TextView
                 android:id="@+id/textView"
                 style="@style/MainTitle"
-                android:layout_width="500dp"
+                android:layout_width="460dp"
                 android:text="@string/current_task_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
             <include
                 layout="@layout/card_no_tasks"
                 android:id="@+id/card_no_tasks"
-                android:layout_width="500dp"
+                android:layout_width="460dp"
                 android:layout_height="320dp"
                 android:layout_marginTop="25dp"
                 android:visibility="gone"
@@ -53,7 +53,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView1"
-                android:layout_width="500dp"
+                android:layout_width="460dp"
                 android:layout_height="300dp"
                 android:backgroundTint="@color/grey"
                 android:elevation="0dp"
@@ -72,7 +72,7 @@
             <include
                 android:id="@+id/card_current_quest"
                 layout="@layout/card_current_quest"
-                android:layout_width="500dp"
+                android:layout_width="460dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_tasks"
-                android:layout_width="500dp"
+                android:layout_width="460dp"
                 android:layout_height="300dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/grey"
